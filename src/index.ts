@@ -1,2 +1,2 @@
-export * from './logger';
-export { IDefaultMetaService } from './interfaces/metadata.interface';
+import { IDefaultMetaService } from './interfaces/metadata.interface';
+export = IDefaultMetaService
