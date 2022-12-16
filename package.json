@@ -2,7 +2,7 @@
   "name": "@icc-dev/icc-log-service",
   "version": "1.0.1",
   "description": "icc-log-services",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
