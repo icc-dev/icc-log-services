@@ -4,5 +4,6 @@ export interface IDefaultMetaService {
         service: string,
         type: string,
         trackId?: string,
+        [key: string]: any,
     }
 }
