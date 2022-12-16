@@ -7,11 +7,11 @@ import { IDefaultMetaService } from './interfaces/metadata.interface';
 export class LoggerService implements ILogger {
     private _logger: winston.Logger;
     
-    constructor() {
+    constructor(defaultMeta: IDefaultMetaService) {
         this._logger = winston.createLogger({
             level: 'info',
             format: winston.format.json(),
-            defaultMeta: null,
+            defaultMeta: defaultMeta,
             transports: [
                 new winston.transports.Console({
                     format: winston.format.combine(
@@ -25,9 +25,7 @@ export class LoggerService implements ILogger {
             ],
         })
     }
-    addMetadata(defaultMeta: IDefaultMetaService): void {
-        this._logger.defaultMeta = defaultMeta;
-    }
+    
     log(message: string, aditionalData?: any) {
         this._logger.log('info',{ message, aditionalData });
     }
